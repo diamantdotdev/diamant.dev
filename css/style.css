@@ -7,15 +7,17 @@
 
 ::-moz-selection {
   background-color: rgba(0, 0, 0, 0);
-  color: #e8ad3e;
+  color: #8cdce2;
 }
 
 ::selection {
   background-color: rgba(0, 0, 0, 0);
-  color: #e8ad3e;
+  color: #8cdce2;
 }
 
 .container {
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,53 +35,18 @@
   color: #ffffff;
 }
 
-.container * {
-  -webkit-transition: opacity 0.1s ease-in-out;
-  transition: opacity 0.1s ease-in-out;
-}
-
 .container .header {
   font-family: 'Red Hat Display', sans-serif;
   margin: 50px 0;
 }
 
-.container .header #Logo {
+.container .header #Haps {
   -webkit-animation: fade 1s ease-in-out 1 forwards;
           animation: fade 1s ease-in-out 1 forwards;
   margin: 20px;
-}
-
-.container .header #Logo .cls-1 {
-  fill: #ffffff;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.container .header #Logo #Visage,
-.container .header #Logo #Cadre {
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-transform-origin: center;
-          transform-origin: center;
-}
-
-.container .header #Logo .cls-2 {
-  fill: #e3f9fa;
-}
-
-.container .header #Logo:hover .cls-1 {
-  fill: #e8ad3e;
-}
-
-.container .header #Logo:hover #Cadre {
-  opacity: 0;
-  -webkit-transform: scale(1.8, 1.8);
-          transform: scale(1.8, 1.8);
-}
-
-.container .header #Logo:hover #Visage {
-  -webkit-transform: scale(1.3, 1.3);
-          transform: scale(1.3, 1.3);
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 3px;
 }
 
 .container .header h1 {
@@ -98,6 +65,13 @@
 .container .header .title {
   -webkit-transition: all 0.0269s linear;
   transition: all 0.0269s linear;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.container .header .subtitle {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .container .header h3 {
@@ -116,6 +90,8 @@
 .container .social {
   -webkit-animation: fade 4s ease-in-out 1;
           animation: fade 4s ease-in-out 1;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,12 +145,12 @@
   color: #427aa1;
 }
 
-.container .social div a:hover .fa-twitch {
-  color: #c744be;
+.container .social div a:hover .fa-youtube {
+  color: #c74444;
 }
 
 .container .social div a:hover .fa-itch-io {
-  color: #e84855;
+  color: #9ee2dc;
 }
 
 .container .social div a:hover ~ .social_name {
@@ -244,5 +220,13 @@
   bottom: 0;
   width: 100%;
   height: 100%;
+}
+
+.suspens.container {
+  background-color: #000;
+}
+
+.suspens.title, .suspens.subtitle, .suspens.social, .suspens#particles-js {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */
