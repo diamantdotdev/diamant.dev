@@ -1,6 +1,6 @@
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
-const userLang = urlParams.get('lang') || navigator.language
+const userLang = urlParams.get('lang') || navigator.language.slice(0, 2)
 
 const stringlang = {
   fr: {
