@@ -21,15 +21,14 @@ const songPlay = () => {
   suspens.currentTime = 1
   selected.pause()
   suspens.play()
+  clearInterval(window.hapsi)
   window.hapsi = setInterval(() => {
     if (suspens.currentTime > 1.3) {
       pinfo.remove()
       setHaps()
-      haps.style.transition = `all 0.01s linear`
-      sus += 0.002
-      if (sus <= 4) {
-        haps.style.transform = `scale(${sus}, ${sus})`
-      }
+      haps.style.transition = `all 0.025s linear`
+      sus += 0.005
+      haps.style.transform = `scale(${sus}, ${sus})`
       if (suspens.currentTime > 20.2) {
         name.classList.add('suspens')
         topt.classList.add('suspens')
@@ -46,9 +45,12 @@ const songPlay = () => {
       }
 
       if (suspens.currentTime > 119) {
-        window.location.replace('https://youtu.be/dQw4w9WgXcQ')
         haps.style.transition = `all 1s linear`
-        haps.style.transform = `scale(100, 100)`
+        haps.style.transform = `scale(1000, 1000)`
+        haps.style.opacity = `0`
+        setTimeout(() => {
+          window.location.replace('https://youtu.be/dQw4w9WgXcQ')
+        }, 1000)
         clearInterval(window.hapsi)
       }
     } else if (suspens.currentTime == 1) {
@@ -56,7 +58,7 @@ const songPlay = () => {
       topt.before(pinfo)
       clearInterval(window.hapsi)
     }
-  }, 100)
+  }, 250)
 }
 
 haps.addEventListener('mouseover', songPlay)
