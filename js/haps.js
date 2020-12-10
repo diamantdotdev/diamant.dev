@@ -6,15 +6,32 @@ const topt = document.querySelector('.subtitle')
 const bottomt = document.querySelector('.social')
 const partt = document.querySelector('#particles-js')
 
-const pinfo = document.createElement('p')
-pinfo.innerHTML = 'Click on the image to change it'
-
 const hapsCount = 34
 let sus = 1
+let ancienAlea = -1
 
 const setHaps = () => {
-  const alea = Math.floor(Math.random() * hapsCount)
-  haps.setAttribute('src', `./img/Haps/${alea}.png`)
+  const aleaGen = Math.floor(Math.random() * hapsCount)
+  const aleaGen2 =
+    aleaGen != ancienAlea
+      ? aleaGen
+      : aleaGen + (Math.floor(Math.random() - 0.5) == 0)
+      ? -1
+      : 1
+  const alea = () => {
+    switch (aleaGen2) {
+      case -1:
+        return 1
+
+      case hapsCount + 1:
+        return hapsCount - 1
+
+      default:
+        return aleaGen2
+    }
+  }
+  ancienAlea = alea()
+  haps.setAttribute('src', `./img/Haps/${alea()}.png`)
 }
 
 const songPlay = () => {
@@ -26,7 +43,7 @@ const songPlay = () => {
     if (suspens.currentTime > 1.3) {
       pinfo.remove()
       setHaps()
-      haps.style.transition = `all 0.025s linear`
+      haps.style.transition = `all 0.25s linear`
       sus += 0.005
       haps.style.transform = `scale(${sus}, ${sus})`
       if (suspens.currentTime > 20.2) {
@@ -42,12 +59,18 @@ const songPlay = () => {
         bottomt.classList.add('suspens')
         partt.classList.add('suspens')
         haps.style.cursor = 'none'
+        haps.style.transform = `translate(0, 50px) scale(${sus}, ${sus})`
+      }
+
+      if (suspens.currentTime > 80.8) {
+        haps.style.transform = `translate(0, 50px) scale(${sus}, ${sus}) rotate(${
+          (suspens.currentTime - 80.8) * (360 / 38)
+        }deg)`
       }
 
       if (suspens.currentTime > 119) {
         haps.style.transition = `all 1s linear`
-        haps.style.transform = `scale(1000, 1000)`
-        haps.style.opacity = `0`
+        haps.style.transform = `scale(0, 0)`
         setTimeout(() => {
           window.location.replace('https://youtu.be/dQw4w9WgXcQ')
         }, 1000)

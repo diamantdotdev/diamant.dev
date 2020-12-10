@@ -1,6 +1,7 @@
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
 const userLang = urlParams.get('lang') || navigator.language.slice(0, 2)
+const pinfo = document.createElement('p')
 
 const stringlang = {
   fr: {
@@ -8,18 +9,21 @@ const stringlang = {
     legal: '(Nom légal: Jordan Lelouette)',
     function: 'Développeur au grand coeur.',
     social: ['Github.', 'LinkedIn.', 'Youtube.', 'Itch.io', 'Mail.'],
+    imageInfo: "Cliquez sur l'image pour la changer.",
   },
   en: {
     name: 'Diamant Lelouette.',
     legal: '(Call me Dia, Diams or Diamond ~ Legal name: Jordan Lelouette)',
     function: 'Dev with a big ♥ !',
     social: ['Github.', 'LinkedIn.', 'Youtube.', 'Itch.io', 'Mail.'],
+    imageInfo: 'Click on the image to change it.',
   },
   espo: {
     name: 'Diamanto Lelouetto.',
     legal: '(Nomo légalo: Jordano Lelouetto)',
     function: 'Développeuro o grando coeuro !',
     social: ['Githubo.', 'LinkedIno.', 'Youtubo.', 'Itcho.io', 'Mailo.'],
+    imageInfo: 'Cliquéo suro lo imageo pouro lo changéo.',
   },
   translator: {
     name: "Animaux britannique limbes the'u'et.",
@@ -28,10 +32,11 @@ const stringlang = {
     social: [
       'Certaines des riches difficultés sociales.',
       'Chacune des jambes.',
-      'Riches.',
+      'nous acceptons.',
       'Oh, dans un court laps de temps et rapidement.',
       'Sujet principal.',
     ],
+    imageInfo: 'Double-cliquez ensuite si vous voulez changer le gouvernement.',
   },
 }
 
@@ -67,4 +72,5 @@ function transl(e) {
     el.innerText = e.social[il]
     il++
   })
+  pinfo.innerHTML = e.imageInfo
 }
