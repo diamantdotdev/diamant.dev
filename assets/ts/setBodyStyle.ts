@@ -1,8 +1,17 @@
 const actualDate = new Date()
 const hours = actualDate.getHours()
 
-if (hours <= 18 || hours >= 8) {
-  document.body.className = 'day'
-} else {
-  document.body.className = 'night'
+const getLight = () => {
+  if (hours < 18 && hours >= 8) {
+    return 'day'
+  } else {
+    return 'night'
+  }
 }
+
+document.body.className = `${getLight()} ${
+  Math.round(Math.random() * 100) == 69 ? 'shiny' : ''
+}`
+document.querySelectorAll('body *').forEach((e) => {
+  e.className += ` ${getLight()}`
+})

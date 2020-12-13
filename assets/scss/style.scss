@@ -1,8 +1,13 @@
-@import './font';
-@import './colors';
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
+
+@import './font';
+@import './colors';
+
+@import './_body';
+@import './_container';
+
+@import './haps';

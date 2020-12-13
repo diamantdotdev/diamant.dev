@@ -1,15 +1,44 @@
 $blueLight: #86d2fd;
-$blueSemiLight: #65c5fc;
+$blueDay: #65c5fc;
 $blue: #159eed;
-$blueSemiDark: #2ba0e3;
+$blueNight: #2ba0e3;
 $blueDark: #0c71ac;
 
 $purpleLight: #b393dc;
-$purpleSemiLight: #a673e7;
+$purpleDay: #a673e7;
 $purple: #6a19d4;
-$purpleSemiDark: #582699;
+$purpleNight: #582699;
 $purpleDark: #1a013b;
 
 $dark: #040c11;
 $light: #eef1fc;
-$darken: #1f2b33;
+
+.day {
+  color: $dark;
+  transition: color 0.5s ease;
+  &::selection {
+    color: $blueDark;
+  }
+}
+
+.night {
+  color: $light;
+  transition: color 0.5s ease;
+  &::selection {
+    color: $purpleLight;
+  }
+}
+
+a:hover {
+  .day {
+    color: $blueNight;
+  }
+
+  .night {
+    color: $purpleDay;
+  }
+}
+
+::selection {
+  background-color: rgba($color: #000000, $alpha: 0);
+}
