@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "watch": true,
+    "outFile": "index.js"
+  }
+}
