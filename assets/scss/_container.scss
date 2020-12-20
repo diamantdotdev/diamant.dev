@@ -27,16 +27,5 @@
       font-size: 1.6rem;
       margin-bottom: 20px;
     }
-    .social-links {
-      display: flex;
-      flex-direction: row;
-      div {
-        font-size: 1.5rem;
-        margin: 10px;
-        &.github {
-          margin-left: 0;
-        }
-      }
-    }
   }
 }

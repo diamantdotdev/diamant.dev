@@ -1,0 +1,15 @@
+.github {
+  .waiting-text {
+    font-size: 0.5rem;
+    opacity: 0.5;
+  }
+  display: flex;
+  flex-direction: column;
+  .gtitle {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+  .project {
+    font-size: 0.8rem;
+  }
+}

@@ -29,12 +29,16 @@ $light: #eef1fc;
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 a:hover {
-  .day {
+  &.day {
     color: $blueNight;
   }
 
-  .night {
+  &.night {
     color: $purpleDay;
   }
 }
