@@ -11,5 +11,12 @@
   }
   .project {
     font-size: 0.8rem;
+    transition: transform 0.5s ease-in-out;
+    &.selected {
+      transform: translateX(10px);
+      @media (max-width: 1000px) {
+        transform: scale(1.1, 1.1);
+      }
+    }
   }
 }

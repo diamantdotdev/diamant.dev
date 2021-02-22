@@ -13,5 +13,5 @@ document.body.className = `${getLight()} ${
   Math.round(Math.random() * 100) == 69 ? 'shiny' : ''
 }`
 document.querySelectorAll('body *').forEach((e) => {
-  e.className += ` ${getLight()}`
+  e.className += ` ${document.body.className}`
 })

@@ -1,0 +1,54 @@
+.github-infos {
+  height: 25vh;
+  width: 100%;
+  &.day {
+    background-color: $dark;
+    color: $light;
+  }
+  &.night {
+    background-color: $light;
+    color: $dark;
+  }
+  display: flex;
+  justify-content: space-around;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  flex-wrap: wrap;
+  align-items: center;
+  h1 {
+    margin-left: -0.075em;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    @media (max-width: 1000px) {
+      flex-direction: row;
+      font-size: 0.8rem;
+      padding: 20px 0;
+      p {
+        padding: 0 20px;
+      }
+    }
+    p a {
+      &.day {
+        color: $light;
+      }
+      &.night {
+        color: $dark;
+      }
+      transition: color 0.5s ease-in-out;
+      &:hover {
+        &.day {
+          color: $purpleLight;
+        }
+        &.night {
+          color: $blueDark;
+        }
+      }
+    }
+  }
+}

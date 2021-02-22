@@ -1,5 +1,6 @@
 body {
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  overflow: hidden;
   &.day {
     background-color: $light;
     &.shiny {

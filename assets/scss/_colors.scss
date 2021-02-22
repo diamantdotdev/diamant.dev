@@ -13,7 +13,7 @@ $purpleDark: #1a013b;
 $dark: #040c11;
 $light: #eef1fc;
 
-.day {
+.container .day {
   color: $dark;
   transition: color 0.5s ease;
   &::selection {
@@ -21,7 +21,7 @@ $light: #eef1fc;
   }
 }
 
-.night {
+.container .night {
   color: $light;
   transition: color 0.5s ease;
   &::selection {
