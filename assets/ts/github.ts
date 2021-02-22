@@ -56,10 +56,10 @@ fetch(githubUrl)
             repos[i].description || 'No description provided.'
           gitURL.setAttribute('href', repos[i].html_url)
           if (repos[i].homepage) {
-            url.removeAttribute('hidden')
+            url.parentElement.removeAttribute('hidden')
             url.setAttribute('href', repos[i].homepage)
           } else {
-            url.setAttribute('hidden', '')
+            url.parentElement.setAttribute('hidden', '')
           }
         } else {
           container.classList.remove('githubed')
