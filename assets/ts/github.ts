@@ -1,4 +1,4 @@
-const githubUsername = 'diamantdotdev'
+const githubUsername = 'diamantdev'
 const githubUrl = `https://api.github.com/users/${githubUsername}/repos`
 
 const waitingText = document.querySelector('.waiting-text')
